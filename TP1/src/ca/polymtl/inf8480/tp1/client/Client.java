@@ -43,16 +43,18 @@ public class Client {
     }
 
     private void run() throws InterruptedException {
-        for (int i = 0; i <= 8; ++i) {
+        for (int i = 1; i <= 14; ++i) {
             System.out.println("~~~~~~~~~~~~~~~~~~~10^" + i + "~~~~~~~~~~~~~~~~~~~");
-            appelNormal(i);
+            for (int j = 0; j < 2; ++j) {
+                appelNormal(i);
 
-            if (localServerStub != null) {
-                appelRMILocal(i);
-            }
+                if (localServerStub != null) {
+                    appelRMILocal(i);
+                }
 
-            if (distantServerStub != null) {
-                appelRMIDistant(i);
+                if (distantServerStub != null) {
+                    appelRMIDistant(i);
+                }
             }
 
             Thread.sleep(2000);
