@@ -43,7 +43,7 @@ public class Client {
     }
 
     private void run() throws InterruptedException {
-        for (int i = 1; i <= 7; ++i) {
+        for (int i = 0; i <= 8; ++i) {
             System.out.println("~~~~~~~~~~~~~~~~~~~10^" + i + "~~~~~~~~~~~~~~~~~~~");
             appelNormal(i);
 
