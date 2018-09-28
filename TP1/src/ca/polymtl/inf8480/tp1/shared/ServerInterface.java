@@ -4,5 +4,10 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface ServerInterface extends Remote {
-	int execute(int a, int b) throws RemoteException;
+
+	/*
+	 * Méthode accessible par RMI. Additionne les deux nombres passés en
+	 * paramètre.
+	 */
+	void execute(byte[] bytes) throws RemoteException;
 }

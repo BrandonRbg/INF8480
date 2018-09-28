@@ -9,6 +9,8 @@ import java.rmi.registry.Registry;
 import ca.polymtl.inf8480.tp1.shared.ServerInterface;
 
 public class Client {
+	private static final int BYTE_MARTIN = 100;
+
 	public static void main(String[] args) {
 		String distantHostname = null;
 
@@ -72,23 +74,23 @@ public class Client {
 
 	private void appelNormal() {
 		long start = System.nanoTime();
-		int result = localServer.execute(4, 7);
+		localServer.execute(new byte[BYTE_MARTIN]);
 		long end = System.nanoTime();
 
 		System.out.println("Temps écoulé appel normal: " + (end - start)
 				+ " ns");
-		System.out.println("Résultat appel normal: " + result);
+		System.out.println("Résultat appel normal: SUCCESS");
 	}
 
 	private void appelRMILocal() {
 		try {
 			long start = System.nanoTime();
-			int result = localServerStub.execute(4, 7);
+			localServerStub.execute(new byte[BYTE_MARTIN]);
 			long end = System.nanoTime();
 
 			System.out.println("Temps écoulé appel RMI local: " + (end - start)
 					+ " ns");
-			System.out.println("Résultat appel RMI local: " + result);
+			System.out.println("Résultat appel RMI local: SUCCESS");
 		} catch (RemoteException e) {
 			System.out.println("Erreur: " + e.getMessage());
 		}
@@ -97,12 +99,12 @@ public class Client {
 	private void appelRMIDistant() {
 		try {
 			long start = System.nanoTime();
-			int result = distantServerStub.execute(4, 7);
+			distantServerStub.execute(new byte[BYTE_MARTIN]);
 			long end = System.nanoTime();
 
 			System.out.println("Temps écoulé appel RMI distant: "
 					+ (end - start) + " ns");
-			System.out.println("Résultat appel RMI distant: " + result);
+			System.out.println("Résultat appel RMI distant: SUCCESS");
 		} catch (RemoteException e) {
 			System.out.println("Erreur: " + e.getMessage());
 		}
