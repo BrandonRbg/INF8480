@@ -11,7 +11,7 @@ import ca.polymtl.inf8480.tp1.shared.ServerInterface;
 public class Client {
     private static final int BYTE_MARTIN = 100;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String distantHostname = null;
 
         if (args.length > 0) {
@@ -42,7 +42,7 @@ public class Client {
         }
     }
 
-    private void run() {
+    private void run() throws InterruptedException {
         for (int i = 1; i <= 7; ++i) {
             System.out.println("~~~~~~~~~~~~~~~~~~~10^" + i + "~~~~~~~~~~~~~~~~~~~");
             appelNormal(i);
@@ -54,6 +54,8 @@ public class Client {
             if (distantServerStub != null) {
                 appelRMIDistant(i);
             }
+
+            Thread.sleep(2000);
         }
     }
 
