@@ -1,37 +1,38 @@
 package ca.polymtl.inf8480.tp1.client;
 
+import ca.polymtl.inf8480.tp1.client.commands.Command;
+import ca.polymtl.inf8480.tp1.client.utils.CommandParser;
+import ca.polymtl.inf8480.tp1.client.utils.ConfigManager;
+import ca.polymtl.inf8480.tp1.shared.AuthServerInterface;
 import ca.polymtl.inf8480.tp1.shared.ServerInterface;
-import ca.polymtl.inf8480.tp1.shared.Utils;
-import ca.polymtl.inf8480.tp1.shared.domain.FileDetails;
-import ca.polymtl.inf8480.tp1.shared.messages.NameChecksumMessage;
-import ca.polymtl.inf8480.tp1.shared.messages.NameContentMessage;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.rmi.AccessException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.Arrays;
 
 public class Client {
-    private static final String PATH = "/tmp/martin";
+    public static final String PATH = "/tmp/jacques";
 
-    public static void main(String[] args) throws InterruptedException {
-        String distantHostname = null;
-
-        if (args.length > 0) {
-            distantHostname = args[0];
+    public static void main(String[] args) {
+        try {
+            Command command = CommandParser.parseArguments(args);
+            if (command.requiresAuthentication() && ConfigManager.getConfig() == null
+                    || ConfigManager.getConfig().getLogin() == null
+                    || ConfigManager.getConfig().getPassword() == null
+                    || ConfigManager.getConfig().getServerHostname() == null) {
+                throw new RuntimeException("Veuillez vous authentifier avant d'effectuer une commande.");
+            }
+            System.out.println(command.execute(
+                    Client.loadServerStub(ConfigManager.getConfig().getServerHostname()),
+                    Client.loadAuthServerStub(ConfigManager.getConfig().getServerHostname())
+            ));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
-        Client client = new Client(distantHostname);
     }
 
-    private ServerInterface distantServerStub = null;
-
-    private ServerInterface loadServerStub(String hostname) {
+    private static ServerInterface loadServerStub(String hostname) {
         ServerInterface stub = null;
 
         try {
@@ -39,8 +40,6 @@ public class Client {
             stub = (ServerInterface) registry.lookup("server");
         } catch (NotBoundException e) {
             System.out.println("Erreur: Le nom '" + e.getMessage() + "' n'est pas défini dans le registre.");
-        } catch (AccessException e) {
-            System.out.println("Erreur: " + e.getMessage());
         } catch (RemoteException e) {
             System.out.println("Erreur: " + e.getMessage());
         }
@@ -48,20 +47,18 @@ public class Client {
         return stub;
     }
 
-    public Client(String distantServerHostname) {
-        super();
+    private static AuthServerInterface loadAuthServerStub(String hostname) {
+        AuthServerInterface stub = null;
 
-        if (System.getSecurityManager() == null) {
-            System.setSecurityManager(new SecurityManager());
-        }
-
-        distantServerStub = loadServerStub(distantServerHostname);
-
-        File file = new File(PATH + File.separator + "test.txt");
         try {
-            distantServerStub.push(new NameContentMessage("", "", "test.txt", "TEST TEST TEST".getBytes()));
-        } catch (IOException e) {
-            e.printStackTrace();
+            Registry registry = LocateRegistry.getRegistry(hostname);
+            stub = (AuthServerInterface) registry.lookup("auth");
+        } catch (NotBoundException e) {
+            System.out.println("Erreur: Le nom '" + e.getMessage() + "' n'est pas défini dans le registre.");
+        } catch (RemoteException e) {
+            System.out.println("Erreur: " + e.getMessage());
         }
+
+        return stub;
     }
 }
