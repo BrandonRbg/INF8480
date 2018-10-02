@@ -12,6 +12,8 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 public class Client {
+
+    // TODO change this to where you want to put your files.
     public static final String PATH = "/tmp/jacques";
 
     public static void main(String[] args) {

@@ -28,6 +28,7 @@ public class Server implements ServerInterface {
 
     private static final String FILE_NAME = "LOCKS";
 
+    // TODO change this to where you want to put your files.
     private static final String PATH = "/tmp/martin";
 
     private static ConcurrentHashMap<String, String> locks;
