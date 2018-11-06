@@ -5,12 +5,18 @@ public class Config {
     private float wrongAnswersRatio = 0;
     private String hostname = "127.0.0.1";
     private int port = 5000;
+    private String nameserverHostname = "127.0.0.1";
 
-    public Config(int maxOperationsPerRequest, float wrongAnswersRatio, String hostname, int port) {
+    public Config() {
+
+    }
+
+    public Config(int maxOperationsPerRequest, float wrongAnswersRatio, String hostname, int port, String nameserverHostname) {
         this.maxOperationsPerRequest = maxOperationsPerRequest;
         this.wrongAnswersRatio = wrongAnswersRatio;
         this.hostname = hostname;
         this.port = port;
+        this.nameserverHostname = nameserverHostname;
     }
 
     public int getMaxOperationsPerRequest() {
@@ -43,5 +49,13 @@ public class Config {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public String getNameserverHostname() {
+        return nameserverHostname;
+    }
+
+    public void setNameserverHostname(String nameserverHostname) {
+        this.nameserverHostname = nameserverHostname;
     }
 }

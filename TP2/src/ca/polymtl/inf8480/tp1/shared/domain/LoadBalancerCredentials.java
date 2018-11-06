@@ -1,6 +1,7 @@
 package ca.polymtl.inf8480.tp1.shared.domain;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class LoadBalancerCredentials implements Serializable {
     private String username;
@@ -25,5 +26,14 @@ public class LoadBalancerCredentials implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof LoadBalancerCredentials)) return false;
+        LoadBalancerCredentials that = (LoadBalancerCredentials) o;
+        return Objects.equals(getUsername(), that.getUsername()) &&
+                Objects.equals(getPassword(), that.getPassword());
     }
 }
