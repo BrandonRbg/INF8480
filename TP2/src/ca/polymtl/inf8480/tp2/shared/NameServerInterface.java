@@ -1,7 +1,7 @@
-package ca.polymtl.inf8480.tp1.shared;
+package ca.polymtl.inf8480.tp2.shared;
 
-import ca.polymtl.inf8480.tp1.shared.domain.CalculationServerInfo;
-import ca.polymtl.inf8480.tp1.shared.domain.LoadBalancerCredentials;
+import ca.polymtl.inf8480.tp2.shared.domain.CalculationServerInfo;
+import ca.polymtl.inf8480.tp2.shared.domain.LoadBalancerCredentials;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

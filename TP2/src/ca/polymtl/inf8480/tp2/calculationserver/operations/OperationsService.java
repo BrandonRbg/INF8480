@@ -1,6 +1,6 @@
-package ca.polymtl.inf8480.tp1.calculationserver.operations;
+package ca.polymtl.inf8480.tp2.calculationserver.operations;
 
-import ca.polymtl.inf8480.tp1.shared.domain.Operation;
+import ca.polymtl.inf8480.tp2.shared.domain.Operation;
 
 public class OperationsService {
     private float wrongAnswersRatio;

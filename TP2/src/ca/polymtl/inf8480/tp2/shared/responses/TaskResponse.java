@@ -1,4 +1,4 @@
-package ca.polymtl.inf8480.tp1.shared.responses;
+package ca.polymtl.inf8480.tp2.shared.responses;
 
 import java.util.List;
 import java.util.Objects;

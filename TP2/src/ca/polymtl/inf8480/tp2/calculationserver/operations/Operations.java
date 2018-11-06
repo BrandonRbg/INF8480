@@ -1,4 +1,4 @@
-package ca.polymtl.inf8480.tp1.calculationserver.operations;
+package ca.polymtl.inf8480.tp2.calculationserver.operations;
 
 /**
  * Methodes utilitaires pour effectuer les operations du TP2.

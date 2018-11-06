@@ -1,14 +1,14 @@
-package ca.polymtl.inf8480.tp1.calculationserver;
+package ca.polymtl.inf8480.tp2.calculationserver;
 
-import ca.polymtl.inf8480.tp1.calculationserver.config.ArgumentsParser;
-import ca.polymtl.inf8480.tp1.calculationserver.config.Config;
-import ca.polymtl.inf8480.tp1.calculationserver.operations.OperationsService;
-import ca.polymtl.inf8480.tp1.calculationserver.operations.ResourcesService;
-import ca.polymtl.inf8480.tp1.shared.CalculationServerInterface;
-import ca.polymtl.inf8480.tp1.shared.NameServerInterface;
-import ca.polymtl.inf8480.tp1.shared.domain.CalculationServerInfo;
-import ca.polymtl.inf8480.tp1.shared.messages.TaskMessage;
-import ca.polymtl.inf8480.tp1.shared.responses.TaskResponse;
+import ca.polymtl.inf8480.tp2.calculationserver.config.ArgumentsParser;
+import ca.polymtl.inf8480.tp2.calculationserver.config.Config;
+import ca.polymtl.inf8480.tp2.calculationserver.operations.OperationsService;
+import ca.polymtl.inf8480.tp2.calculationserver.operations.ResourcesService;
+import ca.polymtl.inf8480.tp2.shared.CalculationServerInterface;
+import ca.polymtl.inf8480.tp2.shared.NameServerInterface;
+import ca.polymtl.inf8480.tp2.shared.domain.CalculationServerInfo;
+import ca.polymtl.inf8480.tp2.shared.messages.TaskMessage;
+import ca.polymtl.inf8480.tp2.shared.responses.TaskResponse;
 
 import java.rmi.ConnectException;
 import java.rmi.NotBoundException;
@@ -18,7 +18,6 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class CalculationsServer implements CalculationServerInterface {
 

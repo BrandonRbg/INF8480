@@ -1,4 +1,4 @@
-package ca.polymtl.inf8480.tp1.calculationserver.config;
+package ca.polymtl.inf8480.tp2.calculationserver.config;
 
 public class Config {
     private int maxOperationsPerRequest = 4;

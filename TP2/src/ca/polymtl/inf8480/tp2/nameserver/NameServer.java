@@ -1,9 +1,9 @@
-package ca.polymtl.inf8480.tp1.nameserver;
+package ca.polymtl.inf8480.tp2.nameserver;
 
 
-import ca.polymtl.inf8480.tp1.shared.NameServerInterface;
-import ca.polymtl.inf8480.tp1.shared.domain.CalculationServerInfo;
-import ca.polymtl.inf8480.tp1.shared.domain.LoadBalancerCredentials;
+import ca.polymtl.inf8480.tp2.shared.NameServerInterface;
+import ca.polymtl.inf8480.tp2.shared.domain.CalculationServerInfo;
+import ca.polymtl.inf8480.tp2.shared.domain.LoadBalancerCredentials;
 
 import java.rmi.ConnectException;
 import java.rmi.registry.LocateRegistry;

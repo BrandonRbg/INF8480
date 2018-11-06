@@ -1,14 +1,14 @@
-package ca.polymtl.inf8480.tp1.loadbalancer;
+package ca.polymtl.inf8480.tp2.loadbalancer;
 
-import ca.polymtl.inf8480.tp1.loadbalancer.config.ArgumentsParser;
-import ca.polymtl.inf8480.tp1.loadbalancer.config.Config;
-import ca.polymtl.inf8480.tp1.shared.CalculationServerInterface;
-import ca.polymtl.inf8480.tp1.shared.NameServerInterface;
-import ca.polymtl.inf8480.tp1.shared.domain.CalculationServerInfo;
-import ca.polymtl.inf8480.tp1.shared.domain.LoadBalancerCredentials;
-import ca.polymtl.inf8480.tp1.shared.domain.Operation;
-import ca.polymtl.inf8480.tp1.shared.messages.TaskMessage;
-import ca.polymtl.inf8480.tp1.shared.responses.TaskResponse;
+import ca.polymtl.inf8480.tp2.loadbalancer.config.ArgumentsParser;
+import ca.polymtl.inf8480.tp2.loadbalancer.config.Config;
+import ca.polymtl.inf8480.tp2.shared.CalculationServerInterface;
+import ca.polymtl.inf8480.tp2.shared.NameServerInterface;
+import ca.polymtl.inf8480.tp2.shared.domain.CalculationServerInfo;
+import ca.polymtl.inf8480.tp2.shared.domain.LoadBalancerCredentials;
+import ca.polymtl.inf8480.tp2.shared.domain.Operation;
+import ca.polymtl.inf8480.tp2.shared.messages.TaskMessage;
+import ca.polymtl.inf8480.tp2.shared.responses.TaskResponse;
 
 import java.io.IOException;
 import java.nio.file.Files;

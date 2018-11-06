@@ -1,7 +1,7 @@
-package ca.polymtl.inf8480.tp1.shared;
+package ca.polymtl.inf8480.tp2.shared;
 
-import ca.polymtl.inf8480.tp1.shared.messages.TaskMessage;
-import ca.polymtl.inf8480.tp1.shared.responses.TaskResponse;
+import ca.polymtl.inf8480.tp2.shared.messages.TaskMessage;
+import ca.polymtl.inf8480.tp2.shared.responses.TaskResponse;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
