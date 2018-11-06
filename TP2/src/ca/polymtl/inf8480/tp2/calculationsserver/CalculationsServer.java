@@ -78,6 +78,7 @@ public class CalculationsServer implements CalculationServerInterface {
 
     @Override
     public TaskResponse execute(TaskMessage taskMessage) throws RemoteException {
+        System.out.println("Started at " + System.currentTimeMillis());
         if (!nameServerStub.authorizeServer(taskMessage.getCredentials())) {
             throw new RuntimeException("Unauthorized server");
         }
@@ -90,7 +91,7 @@ public class CalculationsServer implements CalculationServerInterface {
                 .map(o -> operationsService.executeOperation(o))
                 .mapToInt(Integer::intValue)
                 .reduce(0, (acc, i) -> (acc + i) % 4000);
-        System.out.println("TOTAL OPERATIONS: " + total);
+        System.out.println("Ended at " + System.currentTimeMillis());
         return new TaskResponse(result);
     }
 

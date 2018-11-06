@@ -17,9 +17,11 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 public class LoadBalancer {
@@ -65,7 +67,7 @@ public class LoadBalancer {
     private LoadBalancerCredentials credentials;
     private int nextServer = 0;
 
-    private List<CompletableFuture<Integer>> runningOperations = new ArrayList<>();
+    private ConcurrentLinkedDeque<List<Operation>> chunks = new ConcurrentLinkedDeque<>();
 
     public LoadBalancer(Config config) {
         this.config = config;
@@ -86,26 +88,43 @@ public class LoadBalancer {
             List<Operation> allOperations = getOperations();
             int chunkSize = config.getChunkSize();
             while (!allOperations.isEmpty()) {
-                List<Operation> operationsToProcess = allOperations.size() < chunkSize ? allOperations : new ArrayList<>(allOperations.subList(0, chunkSize));
-                runningOperations.add(startCalculationsOnBatch(operationsToProcess));
+                List<Operation> operationsToProcess = new ArrayList<>(allOperations.size() < chunkSize ? allOperations : allOperations.subList(0, chunkSize));
+                chunks.add(operationsToProcess);
                 allOperations.removeAll(operationsToProcess);
             }
+            List<Future<Integer>> futures = new ArrayList<>();
+            for (int server = 0; server < calculationServers.size(); ++server) {
+                futures.add(startCalculationsOnNextChunk(chunks, server, 0));
+            }
+            int result = 0;
+            for (Future<Integer> future : futures) {
+                result += future.get();
+            }
 
-            int result = runningOperations.parallelStream()
-                    .map(f -> f.join())
-                    .mapToInt(Integer::intValue)
-                    .reduce(0, (acc, i) -> (acc + i) % 4000);
+            result %= 4000;
+
             long delta = System.currentTimeMillis() - startTime;
 
             System.out.println("The result is " + result + ", it took " + delta + "ms");
 
         } catch (IOException e) {
             System.out.println("Failed to parse operations.");
+        } catch (InterruptedException | ExecutionException e) {
+            System.out.println("Task failed");
         }
     }
 
-    private CompletableFuture<Integer> startCalculationsOnBatch(List<Operation> batch) {
-        return CompletableFuture.supplyAsync(() -> getResult(batch));
+    private CompletableFuture<Integer> startCalculationsOnNextChunk(Deque<List<Operation>> chunks, int server, int lastResult) {
+        if (chunks.isEmpty()) {
+            return CompletableFuture.supplyAsync(() -> lastResult);
+        }
+        List<Operation> nextChunk = chunks.pop();
+        return startCalculationsOnBatch(nextChunk, server)
+                .thenCompose(result -> startCalculationsOnNextChunk(chunks, server, (lastResult + result) % 4000));
+    }
+
+    private CompletableFuture<Integer> startCalculationsOnBatch(List<Operation> batch, int server) {
+        return CompletableFuture.supplyAsync(() -> getResult(batch, server), Executors.newFixedThreadPool(calculationServerInfos.size()));
     }
 
     private List<String> getOperationsStrings() throws IOException {
@@ -118,31 +137,33 @@ public class LoadBalancer {
                 .collect(Collectors.toList());
     }
 
-    private int getResult(List<Operation> batch) {
+    private int getResult(List<Operation> batch, int server) {
         try {
             if (config.isSecureMode()) {
-                return getResponse(batch).getResult();
+                return getResponse(batch, server).getResult();
             } else {
-                return getResponseSecure(batch).getResult();
+                return getResponseSecure(batch, server).getResult();
             }
         } catch (Exception e) {
-            return getResult(batch);
+            return getResult(batch, getNextCalculationServer(server));
         }
     }
 
-    private TaskResponse getResponseSecure(List<Operation> batch) throws RemoteException {
+    private TaskResponse getResponseSecure(List<Operation> batch, int server) throws RemoteException {
         List<TaskResponse> responses = new ArrayList<>();
-        TaskResponse lastResponse = getResponse(batch);
+        TaskResponse lastResponse = getResponse(batch, server);
+        int nextServer = getNextCalculationServer(server);
         while (!responses.contains(lastResponse)) {
             responses.add(lastResponse);
-            lastResponse = getResponse(batch);
+            lastResponse = getResponse(batch, nextServer);
+            nextServer = getNextCalculationServer(nextServer);
         }
         return lastResponse;
     }
 
-    private TaskResponse getResponse(List<Operation> batch) throws RemoteException {
+    private TaskResponse getResponse(List<Operation> batch, int server) throws RemoteException {
         try {
-            return getNextCalculationServer().execute(new TaskMessage(credentials, batch));
+            return calculationServers.get(server).execute(new TaskMessage(credentials, batch));
         } catch (RemoteException e) {
             System.out.println("Error while sending task to server.");
             throw e;
@@ -152,8 +173,8 @@ public class LoadBalancer {
         }
     }
 
-    private CalculationServerInterface getNextCalculationServer() {
-        return calculationServers.get((nextServer++) % calculationServers.size());
+    private int getNextCalculationServer(int current) {
+        return (current + 1) % calculationServers.size();
     }
 
     private List<CalculationServerInterface> getCalculationServers() {
