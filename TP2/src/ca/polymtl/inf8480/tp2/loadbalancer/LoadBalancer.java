@@ -17,7 +17,6 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
@@ -65,7 +64,6 @@ public class LoadBalancer {
     private NameServerInterface nameServerStub;
     private Config config;
     private LoadBalancerCredentials credentials;
-    private int nextServer = 0;
 
     private ConcurrentLinkedDeque<List<Operation>> chunks = new ConcurrentLinkedDeque<>();
 
@@ -85,6 +83,7 @@ public class LoadBalancer {
     public void run() {
         try {
             long startTime = System.currentTimeMillis();
+
             List<Operation> allOperations = getOperations();
             int chunkSize = config.getChunkSize();
             while (!allOperations.isEmpty()) {
@@ -92,10 +91,12 @@ public class LoadBalancer {
                 chunks.add(operationsToProcess);
                 allOperations.removeAll(operationsToProcess);
             }
+
             List<Future<Integer>> futures = new ArrayList<>();
             for (int server = 0; server < calculationServers.size(); ++server) {
                 futures.add(startCalculationsOnNextChunk(chunks, server, 0));
             }
+
             int result = 0;
             for (Future<Integer> future : futures) {
                 result += future.get();

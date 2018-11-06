@@ -20,8 +20,6 @@ import java.util.stream.Collectors;
 
 public class CalculationsServer implements CalculationServerInterface {
 
-    private static int total = 0;
-
     public static void main(String[] args) {
         Config config = ArgumentsParser.parseArguments(args);
         CalculationsServer server = new CalculationsServer(config);
@@ -85,11 +83,12 @@ public class CalculationsServer implements CalculationServerInterface {
         if (shouldRefuseTask(ResourcesService.getRefusalRatio(taskMessage.getOperations().size(), config.getMaxOperationsPerRequest()))) {
             throw new RuntimeException("Too much load");
         }
-        total += taskMessage.getOperations().size();
+
         int result = taskMessage.getOperations().parallelStream()
                 .map(o -> operationsService.executeOperation(o))
                 .mapToInt(Integer::intValue)
                 .reduce(0, (acc, i) -> (acc + i) % 4000);
+
         return new TaskResponse(result);
     }
 
