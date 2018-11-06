@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3e4e74e-b59b-4c43-938c-bde3d947e5ff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/CalculationsServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/CalculationsServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/loadbalancer/LoadBalancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/loadbalancer/LoadBalancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/Operations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,7 +46,8 @@
           <entry key="Calcul 5004" value="2" />
           <entry key="Local" value="2" />
           <entry key="classpath" value="3" />
-          <entry key="java" value="37" />
+          <entry key="java" value="38" />
+          <entry key="kt" value="1" />
           <entry key="operations-1949" value="1" />
           <entry key="operations-2809" value="1" />
           <entry key="operations-3216" value="3" />
@@ -58,7 +61,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Eclipse" value="5" />
-          <entry key="JAVA" value="37" />
+          <entry key="JAVA" value="38" />
+          <entry key="Kotlin" value="1" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Terminal Session" value="9" />
           <entry key="XML" value="2" />
@@ -66,7 +70,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="7549" />
+          <entry key="java" value="7838" />
+          <entry key="kt" value="204" />
           <entry key="operations-3216" value="65" />
           <entry key="project" value="2" />
           <entry key="sh" value="4" />
@@ -76,7 +81,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Eclipse" value="2" />
-          <entry key="JAVA" value="7549" />
+          <entry key="JAVA" value="7838" />
+          <entry key="Kotlin" value="204" />
           <entry key="PLAIN_TEXT" value="69" />
           <entry key="XML" value="83" />
         </counts>
@@ -97,12 +103,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+            <state relative-caret-position="315">
+              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
               <folding>
-                <element signature="e#881#882#0" expanded="true" />
-                <element signature="e#937#938#0" expanded="true" />
+                <element signature="e#244#245#0" expanded="true" />
+                <element signature="e#302#303#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/Operations.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -110,8 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/operations-3216">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="6583" column="7" lean-forward="true" selection-start-line="6583" selection-start-column="7" selection-end-line="6583" selection-end-column="7" />
+            <state relative-caret-position="932">
+              <caret line="6591" column="10" lean-forward="true" selection-start-line="6591" selection-start-column="10" selection-end-line="6591" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -119,8 +134,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/CalculationsServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="94" column="40" lean-forward="true" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
+            <state relative-caret-position="199">
+              <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+              <folding>
+                <element signature="e#3881#3882#0" expanded="true" />
+                <element signature="e#3932#3933#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,15 +167,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/shared/responses/TaskResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/config/Config.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
@@ -177,11 +187,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/loadbalancer/LoadBalancer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="281">
+              <caret line="159" column="9" lean-forward="true" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#7561#7562#0" expanded="true" />
@@ -197,6 +207,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -253,9 +264,12 @@
         <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/nameserver/NameServer.java" />
         <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/shared/responses/TaskResponse.java" />
         <option value="$PROJECT_DIR$/operations-3216" />
-        <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.java" />
-        <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/CalculationsServer.java" />
         <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/loadbalancer/LoadBalancer.java" />
+        <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/CalculationsServer.java" />
+        <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/nameserver/test.kt" />
+        <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.kt" />
+        <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.java" />
+        <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/Operations.java" />
       </list>
     </option>
   </component>
@@ -380,7 +394,7 @@
     <property name="SearchEverywhereHistoryKey" value="taskRe&#9;FILE&#9;file:///Users/brandonroberge/Projects/INF8480/TP2/src/ca/polymtl/inf8480/tp2/shared/responses/TaskResponse.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541485252811" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541488883371" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -460,12 +474,12 @@
       <option name="presentableId" value="Default" />
       <updated>1541458277864</updated>
       <workItem from="1541458290324" duration="162000" />
-      <workItem from="1541458471045" duration="22508000" />
+      <workItem from="1541458471045" duration="25938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22670000" />
+    <option name="totallyTimeSpent" value="26100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -636,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/Operations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/loadbalancer/config/ArgumentsParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -682,13 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/config/ArgumentsParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/operations-1949">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -724,24 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-          <folding>
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#937#938#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/operations-3216">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="6583" column="7" lean-forward="true" selection-start-line="6583" selection-start-column="7" selection-end-line="6583" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calculationsserver.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -749,22 +731,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/CalculationsServer.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/config/ArgumentsParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="94" column="40" lean-forward="true" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
+        <state relative-caret-position="105">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/loadbalancer/LoadBalancer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="281">
+          <caret line="159" column="9" lean-forward="true" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#7561#7562#0" expanded="true" />
             <element signature="e#7625#7626#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/CalculationsServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+          <folding>
+            <element signature="e#3881#3882#0" expanded="true" />
+            <element signature="e#3932#3933#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/operations-3216">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="932">
+          <caret line="6591" column="10" lean-forward="true" selection-start-line="6591" selection-start-column="10" selection-end-line="6591" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/nameserver/test.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding>
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/Operations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
         </state>
       </provider>
     </entry>

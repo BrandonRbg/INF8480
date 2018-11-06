@@ -10,18 +10,20 @@ public class OperationsService {
     }
 
     public int executeOperation(Operation operation) {
+        int result = 0;
+        switch (operation.getOperation()) {
+            case PELL:
+                result = Operations.pell(operation.getOperand());
+                break;
+            case PRIME:
+                result = Operations.prime(operation.getOperand());
+                break;
+        }
+
         if (shouldReturnWrongAnswer()) {
             return getRandomAnswer();
         }
-
-        switch (operation.getOperation()) {
-            case PELL:
-                return Operations.pell(operation.getOperand());
-            case PRIME:
-                return Operations.prime(operation.getOperand());
-            default:
-                return 0;
-        }
+        return result;
     }
 
     private int getRandomAnswer() {
