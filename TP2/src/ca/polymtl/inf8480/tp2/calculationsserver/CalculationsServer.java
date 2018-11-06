@@ -1,9 +1,9 @@
-package ca.polymtl.inf8480.tp2.calculationserver;
+package ca.polymtl.inf8480.tp2.calculationsserver;
 
-import ca.polymtl.inf8480.tp2.calculationserver.config.ArgumentsParser;
-import ca.polymtl.inf8480.tp2.calculationserver.config.Config;
-import ca.polymtl.inf8480.tp2.calculationserver.operations.OperationsService;
-import ca.polymtl.inf8480.tp2.calculationserver.operations.ResourcesService;
+import ca.polymtl.inf8480.tp2.calculationsserver.config.ArgumentsParser;
+import ca.polymtl.inf8480.tp2.calculationsserver.config.Config;
+import ca.polymtl.inf8480.tp2.calculationsserver.operations.OperationsService;
+import ca.polymtl.inf8480.tp2.calculationsserver.operations.ResourcesService;
 import ca.polymtl.inf8480.tp2.shared.CalculationServerInterface;
 import ca.polymtl.inf8480.tp2.shared.NameServerInterface;
 import ca.polymtl.inf8480.tp2.shared.domain.CalculationServerInfo;

@@ -2,26 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3e4e74e-b59b-4c43-938c-bde3d947e5ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client.sh" beforeDir="false" afterPath="$PROJECT_DIR$/client.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/server.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/calculationserver/CalculationsServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/CalculationsServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/calculationserver/config/ArgumentsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/config/ArgumentsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/calculationserver/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/calculationserver/operations/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/Operations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/calculationserver/operations/OperationsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/OperationsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/calculationserver/operations/ResourcesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/ResourcesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/loadbalancer/LoadBalancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/loadbalancer/LoadBalancer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/loadbalancer/config/ArgumentsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/loadbalancer/config/ArgumentsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/loadbalancer/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/loadbalancer/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/nameserver/NameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/nameserver/NameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/shared/CalculationServerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/shared/CalculationServerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/shared/NameServerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/shared/NameServerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/shared/domain/CalculationServerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/shared/domain/CalculationServerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/shared/domain/LoadBalancerCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/shared/domain/LoadBalancerCredentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/shared/domain/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/shared/domain/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/shared/messages/TaskMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/shared/messages/TaskMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/shared/responses/TaskResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/shared/responses/TaskResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/CalculationsServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/CalculationsServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/config/ArgumentsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/config/ArgumentsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/Operations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/OperationsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/ResourcesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/ResourcesService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,9 +32,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="classpath" value="2" />
+          <entry key="classpath" value="3" />
           <entry key="java" value="20" />
-          <entry key="project" value="1" />
+          <entry key="project" value="2" />
           <entry key="sh" value="2" />
           <entry key="versions" value="1" />
           <entry key="xml" value="2" />
@@ -52,7 +42,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Eclipse" value="3" />
+          <entry key="Eclipse" value="5" />
           <entry key="JAVA" value="20" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="2" />
@@ -61,13 +51,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="5224" />
-          <entry key="project" value="1" />
+          <entry key="project" value="2" />
+          <entry key="xml" value="83" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Eclipse" value="1" />
+          <entry key="Eclipse" value="2" />
           <entry key="JAVA" value="5224" />
+          <entry key="XML" value="83" />
         </counts>
       </usages-collector>
     </session>
@@ -75,7 +67,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/OperationsService.java">
+        <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
               <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
@@ -86,14 +78,32 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+            <state relative-caret-position="483">
+              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/ResourcesService.java">
+        <entry file="file://$PROJECT_DIR$/.classpath">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.project">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/ResourcesService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21">
               <caret line="1" selection-start-line="1" selection-end-line="1" />
@@ -222,7 +232,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.project" />
         <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/shared/domain/CalculationServerInfo.java" />
         <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/shared/NameServerInterface.java" />
         <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/calculationserver/config/Config.java" />
@@ -238,6 +247,8 @@
         <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/calculationserver/CalculationsServer.java" />
         <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/shared/responses/TaskResponse.java" />
         <option value="$PROJECT_DIR$/src/ca/polymtl/inf8480/tp1/loadbalancer/LoadBalancer.java" />
+        <option value="$PROJECT_DIR$/.project" />
+        <option value="$PROJECT_DIR$/build.xml" />
       </list>
     </option>
   </component>
@@ -283,14 +294,14 @@
               <item name="TP2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tp2" type="462c0819:PsiDirectoryNode" />
-              <item name="calculationserver" type="462c0819:PsiDirectoryNode" />
+              <item name="calculationsserver" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TP2" type="b2602c69:ProjectViewProjectNode" />
               <item name="TP2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tp2" type="462c0819:PsiDirectoryNode" />
-              <item name="calculationserver" type="462c0819:PsiDirectoryNode" />
+              <item name="calculationsserver" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -298,7 +309,7 @@
               <item name="TP2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tp2" type="462c0819:PsiDirectoryNode" />
-              <item name="calculationserver" type="462c0819:PsiDirectoryNode" />
+              <item name="calculationsserver" type="462c0819:PsiDirectoryNode" />
               <item name="operations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -356,7 +367,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541469139167" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541469393407" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -364,6 +375,11 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -425,18 +441,18 @@
       <option name="presentableId" value="Default" />
       <updated>1541458277864</updated>
       <workItem from="1541458290324" duration="162000" />
-      <workItem from="1541458471045" duration="8796000" />
+      <workItem from="1541458471045" duration="9049000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8958000" />
+    <option name="totallyTimeSpent" value="9211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -474,8 +490,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.project" />
-    <entry file="file://$PROJECT_DIR$/.classpath" />
     <entry file="file://$PROJECT_DIR$/.versions">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -483,7 +497,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/Operations.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/Operations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
@@ -540,7 +554,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/config/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/config/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
@@ -553,7 +567,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/config/ArgumentsParser.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/config/ArgumentsParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
@@ -622,14 +636,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/OperationsService.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/OperationsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/CalculationsServer.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/CalculationsServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
           <caret line="79" column="69" selection-start-line="79" selection-start-column="69" selection-end-line="79" selection-end-column="69" />
@@ -686,7 +700,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationserver/operations/ResourcesService.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/polymtl/inf8480/tp2/calculationsserver/operations/ResourcesService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
@@ -697,10 +711,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.classpath">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.project">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        <state relative-caret-position="483">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
         </state>
       </provider>
     </entry>
