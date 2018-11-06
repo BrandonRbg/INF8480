@@ -10,7 +10,6 @@ public class OperationsService {
     }
 
     public int executeOperation(Operation operation) {
-        System.out.println("Calculating " + operation.getOperation() + " " + operation.getOperand());
         if (shouldReturnWrongAnswer()) {
             return getRandomAnswer();
         }

@@ -20,8 +20,6 @@ import java.rmi.registry.Registry;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 public class LoadBalancer {
@@ -107,10 +105,7 @@ public class LoadBalancer {
     }
 
     private CompletableFuture<Integer> startCalculationsOnBatch(List<Operation> batch) {
-        return CompletableFuture.supplyAsync(() -> {
-            System.out.println("[" + Thread.currentThread().getName() + "] Starting calc");
-            return getResult(batch);
-        }, Executors.newFixedThreadPool(10));
+        return CompletableFuture.supplyAsync(() -> getResult(batch));
     }
 
     private List<String> getOperationsStrings() throws IOException {
