@@ -1,20 +1,19 @@
 package ca.polymtl.inf8480.tp2.shared.responses;
 
-import java.util.List;
-import java.util.Objects;
+import java.io.Serializable;
 
-public class TaskResponse {
-    private List<Integer> result;
+public class TaskResponse implements Serializable {
+    private int result;
 
-    public TaskResponse(List<Integer> result) {
+    public TaskResponse(int result) {
         this.result = result;
     }
 
-    public List<Integer> getResult() {
+    public int getResult() {
         return result;
     }
 
-    public void setResult(List<Integer> result) {
+    public void setResult(int result) {
         this.result = result;
     }
 
@@ -22,7 +21,7 @@ public class TaskResponse {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof TaskResponse)) return false;
-        TaskResponse response = (TaskResponse) o;
-        return Objects.equals(getResult(), response.getResult());
+        TaskResponse that = (TaskResponse) o;
+        return getResult() == that.getResult();
     }
 }

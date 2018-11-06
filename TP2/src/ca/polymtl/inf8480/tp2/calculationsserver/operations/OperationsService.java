@@ -10,6 +10,7 @@ public class OperationsService {
     }
 
     public int executeOperation(Operation operation) {
+        System.out.println("Calculating " + operation.getOperation() + " " + operation.getOperand());
         if (shouldReturnWrongAnswer()) {
             return getRandomAnswer();
         }
@@ -29,6 +30,6 @@ public class OperationsService {
     }
 
     private boolean shouldReturnWrongAnswer() {
-        return Math.random() > wrongAnswersRatio;
+        return Math.random() < wrongAnswersRatio;
     }
 }

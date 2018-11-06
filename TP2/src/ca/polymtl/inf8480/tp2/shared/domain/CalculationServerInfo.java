@@ -1,6 +1,8 @@
 package ca.polymtl.inf8480.tp2.shared.domain;
 
-public class CalculationServerInfo {
+import java.io.Serializable;
+
+public class CalculationServerInfo implements Serializable {
     private String hostname;
     private int port;
     private int maxOperationsPerRequest;

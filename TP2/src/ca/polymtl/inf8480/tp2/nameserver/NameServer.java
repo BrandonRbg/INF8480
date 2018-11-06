@@ -9,6 +9,7 @@ import java.rmi.ConnectException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,6 +22,8 @@ public class NameServer implements NameServerInterface {
     private List<LoadBalancerCredentials> loadBalancerCredentials = Arrays.asList(
             new LoadBalancerCredentials("loadbalancer", "123456")
     );
+
+    private List<CalculationServerInfo> calculationServerInfo = new ArrayList<>();
 
     public void run() {
         if (System.getSecurityManager() == null) {
@@ -50,11 +53,10 @@ public class NameServer implements NameServerInterface {
 
     @Override
     public List<CalculationServerInfo> getAllCalculationServers() {
-        return null;
+        return calculationServerInfo;
     }
-
     @Override
     public void registerServer(CalculationServerInfo serverInfo) {
-
+        calculationServerInfo.add(serverInfo);
     }
 }

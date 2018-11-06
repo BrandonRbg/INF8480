@@ -18,9 +18,10 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 public class LoadBalancer {
@@ -30,6 +31,7 @@ public class LoadBalancer {
             LoadBalancer loadBalancer = new LoadBalancer(config);
             loadBalancer.run();
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Please provide every argument: ./loadbalancer.jar FILE_PATH SECURE_MODE HOSTNAME USERNAME PASSWORD CHUNK_SIZE");
         }
     }
@@ -53,7 +55,7 @@ public class LoadBalancer {
         } catch (NotBoundException e) {
             System.out.println("Erreur: Le nom '" + e.getMessage() + "' n'est pas défini dans le registre.");
         } catch (RemoteException e) {
-            System.out.println("Erreur: " + e.getMessage());
+            System.out.println("Erreur: loadCalculationsServerStub " + e.getMessage());
         }
         return null;
     }
@@ -65,7 +67,7 @@ public class LoadBalancer {
     private LoadBalancerCredentials credentials;
     private int nextServer = 0;
 
-    private List<CompletableFuture<List<Integer>>> runningOperations = new ArrayList<>();
+    private List<CompletableFuture<Integer>> runningOperations = new ArrayList<>();
 
     public LoadBalancer(Config config) {
         this.config = config;
@@ -74,6 +76,7 @@ public class LoadBalancer {
         try {
             this.calculationServerInfos = nameServerStub.getAllCalculationServers();
             this.calculationServers = getCalculationServers();
+            System.out.println("Started loadbalancer with " + this.calculationServerInfos.size() + " servers.");
         } catch (RemoteException e) {
             System.out.println("Failed to connect to nameserver at " + config.getHostname() + ".");
         }
@@ -81,29 +84,33 @@ public class LoadBalancer {
 
     public void run() {
         try {
+            long startTime = System.currentTimeMillis();
             List<Operation> allOperations = getOperations();
             int chunkSize = config.getChunkSize();
             while (!allOperations.isEmpty()) {
-                List<Operation> operationsToProcess = allOperations.size() < chunkSize ? allOperations : allOperations.subList(0, chunkSize);
+                List<Operation> operationsToProcess = allOperations.size() < chunkSize ? allOperations : new ArrayList<>(allOperations.subList(0, chunkSize));
                 runningOperations.add(startCalculationsOnBatch(operationsToProcess));
                 allOperations.removeAll(operationsToProcess);
             }
 
-            int result = runningOperations.stream()
-                    .map(CompletableFuture::join)
-                    .flatMap(Collection::stream)
+            int result = runningOperations.parallelStream()
+                    .map(f -> f.join())
                     .mapToInt(Integer::intValue)
-                    .sum();
+                    .reduce(0, (acc, i) -> (acc + i) % 4000);
+            long delta = System.currentTimeMillis() - startTime;
 
-            System.out.println("The result is " + result);
+            System.out.println("The result is " + result + ", it took " + delta + "ms");
 
         } catch (IOException e) {
             System.out.println("Failed to parse operations.");
         }
     }
 
-    private CompletableFuture<List<Integer>> startCalculationsOnBatch(List<Operation> batch) {
-        return CompletableFuture.supplyAsync(() -> getResult(batch));
+    private CompletableFuture<Integer> startCalculationsOnBatch(List<Operation> batch) {
+        return CompletableFuture.supplyAsync(() -> {
+            System.out.println("[" + Thread.currentThread().getName() + "] Starting calc");
+            return getResult(batch);
+        }, Executors.newFixedThreadPool(10));
     }
 
     private List<String> getOperationsStrings() throws IOException {
@@ -116,14 +123,14 @@ public class LoadBalancer {
                 .collect(Collectors.toList());
     }
 
-    private List<Integer> getResult(List<Operation> batch) {
+    private int getResult(List<Operation> batch) {
         try {
             if (config.isSecureMode()) {
                 return getResponse(batch).getResult();
             } else {
                 return getResponseSecure(batch).getResult();
             }
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             return getResult(batch);
         }
     }
@@ -142,7 +149,10 @@ public class LoadBalancer {
         try {
             return getNextCalculationServer().execute(new TaskMessage(credentials, batch));
         } catch (RemoteException e) {
-            System.out.println("Error while sending task to server #" + nextServer);
+            System.out.println("Error while sending task to server.");
+            throw e;
+        } catch (RuntimeException e) {
+            System.out.println("Server has too much load.");
             throw e;
         }
     }

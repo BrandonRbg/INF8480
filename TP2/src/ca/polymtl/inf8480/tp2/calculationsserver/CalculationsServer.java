@@ -16,7 +16,6 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class CalculationsServer implements CalculationServerInterface {
@@ -59,7 +58,7 @@ public class CalculationsServer implements CalculationServerInterface {
             CalculationServerInterface stub = (CalculationServerInterface) UnicastRemoteObject
                     .exportObject(this, config.getPort());
 
-            Registry registry = LocateRegistry.getRegistry();
+            Registry registry = LocateRegistry.createRegistry(config.getPort());
             registry.rebind("calculationsserver", stub);
             System.out.println("CalculationsServer ready.");
 
@@ -85,10 +84,10 @@ public class CalculationsServer implements CalculationServerInterface {
             throw new RuntimeException("Too much load");
         }
 
-        List<Integer> result = taskMessage.getOperations().stream()
+        int result = taskMessage.getOperations().stream()
                 .map(o -> operationsService.executeOperation(o))
-                .collect(Collectors.toList());
-
+                .mapToInt(Integer::intValue)
+                .reduce(0, (acc, i) -> (acc + i) % 4000);
         return new TaskResponse(result);
     }
 
