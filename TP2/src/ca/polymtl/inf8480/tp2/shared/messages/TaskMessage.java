@@ -1,7 +1,7 @@
-package ca.polymtl.inf8480.tp1.shared.messages;
+package ca.polymtl.inf8480.tp2.shared.messages;
 
-import ca.polymtl.inf8480.tp1.shared.domain.LoadBalancerCredentials;
-import ca.polymtl.inf8480.tp1.shared.domain.Operation;
+import ca.polymtl.inf8480.tp2.shared.domain.LoadBalancerCredentials;
+import ca.polymtl.inf8480.tp2.shared.domain.Operation;
 
 import java.io.Serializable;
 import java.util.List;

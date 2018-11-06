@@ -1,4 +1,4 @@
-package ca.polymtl.inf8480.tp1.shared.domain;
+package ca.polymtl.inf8480.tp2.shared.domain;
 
 public class CalculationServerInfo {
     private String hostname;

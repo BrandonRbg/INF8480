@@ -1,4 +1,4 @@
-package ca.polymtl.inf8480.tp1.loadbalancer.config;
+package ca.polymtl.inf8480.tp2.loadbalancer.config;
 
 public class ArgumentsParser {
     public static Config parseArguments(String[] args) {
