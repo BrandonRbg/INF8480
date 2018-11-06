@@ -4,12 +4,13 @@ import ca.polymtl.inf8480.tp1.shared.domain.LoadBalancerCredentials;
 import ca.polymtl.inf8480.tp1.shared.domain.Operation;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class TaskMessage implements Serializable {
     private LoadBalancerCredentials credentials;
-    private Operation[] operations;
+    private List<Operation> operations;
 
-    public TaskMessage(LoadBalancerCredentials credentials, Operation[] operations) {
+    public TaskMessage(LoadBalancerCredentials credentials, List<Operation> operations) {
         this.credentials = credentials;
         this.operations = operations;
     }
@@ -22,11 +23,11 @@ public class TaskMessage implements Serializable {
         this.credentials = credentials;
     }
 
-    public Operation[] getOperations() {
+    public List<Operation> getOperations() {
         return operations;
     }
 
-    public void setOperations(Operation[] operations) {
+    public void setOperations(List<Operation> operations) {
         this.operations = operations;
     }
 }

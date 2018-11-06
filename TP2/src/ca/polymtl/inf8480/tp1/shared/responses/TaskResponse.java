@@ -1,17 +1,28 @@
 package ca.polymtl.inf8480.tp1.shared.responses;
 
-public class TaskResponse {
-    private int[] result;
+import java.util.List;
+import java.util.Objects;
 
-    public TaskResponse(int[] result) {
+public class TaskResponse {
+    private List<Integer> result;
+
+    public TaskResponse(List<Integer> result) {
         this.result = result;
     }
 
-    public int[] getResult() {
+    public List<Integer> getResult() {
         return result;
     }
 
-    public void setResult(int[] result) {
+    public void setResult(List<Integer> result) {
         this.result = result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TaskResponse)) return false;
+        TaskResponse response = (TaskResponse) o;
+        return Objects.equals(getResult(), response.getResult());
     }
 }

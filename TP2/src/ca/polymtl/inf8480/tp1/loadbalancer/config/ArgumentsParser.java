@@ -7,7 +7,9 @@ public class ArgumentsParser {
                     args[0],
                     Boolean.parseBoolean(args[1]),
                     args[2],
-                    args[3]
+                    args[3],
+                    args[4],
+                    Integer.parseInt(args[5])
             );
         } catch (Exception e) {
             return new Config();

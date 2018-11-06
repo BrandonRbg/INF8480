@@ -30,4 +30,23 @@ public class Operation implements Serializable {
     public void setOperand(int operand) {
         this.operand = operand;
     }
+
+    private static OperationType parseOperationType(String operationType) {
+        switch (operationType) {
+            case "pell":
+                return OperationType.PELL;
+            case "prime":
+                return OperationType.PRIME;
+        }
+        return null;
+    }
+
+    public static Operation parseOperation(String operation) {
+        try {
+            String[] parts = operation.split(" ");
+            return new Operation(parseOperationType(parts[0]), Integer.parseInt(parts[1]));
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

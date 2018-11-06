@@ -3,18 +3,22 @@ package ca.polymtl.inf8480.tp1.loadbalancer.config;
 public class Config {
     private String operationsFilePath = "./operations-588";
     private boolean secureMode = false;
+    private String hostname = "127.0.0.1";
     private String username = "loadbalancer";
     private String password = "123456";
+    private int chunkSize = 5;
 
     public Config() {
 
     }
 
-    public Config(String operationsFilePath, boolean secureMode, String username, String password) {
+    public Config(String operationsFilePath, boolean secureMode, String hostname, String username, String password, int chunkSize) {
         this.operationsFilePath = operationsFilePath;
         this.secureMode = secureMode;
+        this.hostname = hostname;
         this.username = username;
         this.password = password;
+        this.chunkSize = chunkSize;
     }
 
     public String getOperationsFilePath() {
@@ -47,5 +51,21 @@ public class Config {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getChunkSize() {
+        return chunkSize;
+    }
+
+    public void setChunkSize(int chunkSize) {
+        this.chunkSize = chunkSize;
+    }
+
+    public String getHostname() {
+        return hostname;
+    }
+
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
     }
 }

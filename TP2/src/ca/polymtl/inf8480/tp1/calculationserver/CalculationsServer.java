@@ -16,6 +16,8 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CalculationsServer implements CalculationServerInterface {
@@ -80,13 +82,13 @@ public class CalculationsServer implements CalculationServerInterface {
             throw new RuntimeException("Unauthorized server");
         }
 
-        if (shouldRefuseTask(ResourcesService.getRefusalRatio(taskMessage.getOperations().length, config.getMaxOperationsPerRequest()))) {
+        if (shouldRefuseTask(ResourcesService.getRefusalRatio(taskMessage.getOperations().size(), config.getMaxOperationsPerRequest()))) {
             throw new RuntimeException("Too much load");
         }
 
-        int[] result = Stream.of(taskMessage.getOperations())
+        List<Integer> result = taskMessage.getOperations().stream()
                 .map(o -> operationsService.executeOperation(o))
-                .mapToInt(i -> i).toArray();
+                .collect(Collectors.toList());
 
         return new TaskResponse(result);
     }
